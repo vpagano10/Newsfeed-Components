@@ -112,3 +112,49 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+const newsUpdates = document.querySelector(".articles");
+
+function createNews(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+  const news = document.createElement("div");
+  const newsName = document.createElement("h2");
+  const newsDate = document.createElement("p");
+  const paragraph1 = document.createElement("p");
+  const paragraph2 = document.createElement("p");
+  const paragraph3 = document.createElement("p");
+  const button = document.createElement("span");
+
+  news.appendChild(newsName);
+  news.appendChild(newsDate);
+  news.appendChild(paragraph1);
+  news.appendChild(paragraph2);
+  news.appendChild(paragraph3);
+  news.appendChild(button);
+
+  news.classList.add("article");
+  newsDate.classList.add("date");
+  button.classList.add("expandButton");
+
+  newsName.textContent = title;
+  newsDate.textContent = date;
+  paragraph1.textContent = firstParagraph;
+  paragraph2.textContent = secondParagraph;
+  paragraph3.textContent = thirdParagraph;
+  button.textContent = "testing button"
+
+  button.addEventListener("click", (e) => {
+    news.classList.toggle("article-open");
+  });
+  return news;
+}
+
+data.forEach(el => {
+  newsUpdates.appendChild(createNews(el.title, el.data, el.firstParagraph, el.secondParagraph, el.thirdParagraph));
+});
+
+
+// Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+
+// Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+
+// Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
