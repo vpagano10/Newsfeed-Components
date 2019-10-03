@@ -64,6 +64,7 @@ function createMenu() {
   option6.textContent = menuItems[5];
 
   hamburger.addEventListener("click", (e) => {
+    console.log("sdad");
     hamburger.classList.toggle("menu--open");
   });
   return hamburger;

@@ -141,6 +141,7 @@ function createNews(title, date, firstParagraph, secondParagraph, thirdParagraph
   const paragraph2 = document.createElement("p");
   const paragraph3 = document.createElement("p");
   const button = document.createElement("span");
+  // const closeButton = document.createElement("span");//close button
 
   news.appendChild(newsName);
   news.appendChild(newsDate);
@@ -148,17 +149,25 @@ function createNews(title, date, firstParagraph, secondParagraph, thirdParagraph
   news.appendChild(paragraph2);
   news.appendChild(paragraph3);
   news.appendChild(button);
+  // news.appendChild(closeButton);//close button
 
   news.classList.add("article");
   newsDate.classList.add("date");
   button.classList.add("expandButton");
+  // button.classList.add("expandButton", "hide-btn");//close button
 
   newsName.textContent = title;
   newsDate.textContent = date;
   paragraph1.textContent = firstParagraph;
   paragraph2.textContent = secondParagraph;
   paragraph3.textContent = thirdParagraph;
-  button.textContent = "Expand article";
+  button.textContent = "Expand Article";
+  
+  button.style.backgroundColor = "dodgerblue";
+  button.style.color = "white";
+  button.style.padding = ".25%";
+  button.style.width = "100%";
+  button.style.textAlign = "center";
 
   button.addEventListener("click", (e) => {
     news.classList.toggle("article-open");
