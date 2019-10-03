@@ -34,10 +34,92 @@ let menuItems = [
   
 */
 
+
+// const headerMenu = document.querySelector(".header");
+
+// function createMenu(text) {
+//   const hamburger = document.createElement("div");
+//   const list = document.createElement("ul");
+//   const option = document.createElement("li");
+  
+//   hamburger.classList.add("menu");
+
+//   option.textContent = text;
+
+//   hamburger.appendChild(list);
+//   list.appendChild(option);
+
+//   hamburger.addEventListener("click", (event) => {
+//     hamburger.classList.toggle("menu--open");
+//   });
+
+  // for(let i = 0; i < menuItems.length; i++) {
+  //   let option = createMenu(menuItems[i])
+  //   list.appendChild(option);
+  // }
+
+  // menuItems.forEach( (item) => {
+  //   let option = createMenu(item);
+  //   list.appendChild(option);
+  // })
+
+//   menuItems.map( (item) => {
+//     let option = createMenu(item);
+//     return option;
+//   })
+
+//   return hamburger;
+// }
+
+// headerMenu.appendChild(createMenu());
+
+// for(let i = 0; i <menuItems.length; i++) {
+//   let option = createMenu(menuItems[i])
+//   list.appendChild(option);
+// }
+
+
+
+
+
+
+// const headerMenu = document.querySelector(".header");
+
+// function createMenu() {
+//   const menuIcon = document.createElement("div");
+//   const list = document.createElement("ul");
+//   const option = document.createElement("li");
+
+//   menuIcon.classList.add("menu");
+
+//   menuIcon.appendChild(list);
+//   list.appendChild(option);
+
+//   menuItems.forEach( (item) => {
+//     let option = menuItems(item);
+//     list.appendChild(option);
+//   });
+  
+//   option.textContent = menuItems[i];
+
+//   menuIcon.addEventListener("click", (e) => {
+//     console.log("sdad");
+//     menuIcon.classList.toggle("menu--open");
+//   });
+//   return menuIcon;
+// }
+
+// headerMenu.appendChild(createMenu());
+
+
+
+
+
+
 const headerMenu = document.querySelector(".header");
 
 function createMenu() {
-  const hamburger = document.createElement("div");
+  const menuIcon = document.createElement("div");
   const list = document.createElement("ul");
   const option1 = document.createElement("li");
   const option2 = document.createElement("li");
@@ -46,7 +128,7 @@ function createMenu() {
   const option5 = document.createElement("li");
   const option6 = document.createElement("li");
 
-  hamburger.appendChild(list);
+  menuIcon.appendChild(list);
   list.appendChild(option1);
   list.appendChild(option2);
   list.appendChild(option3);
@@ -54,7 +136,7 @@ function createMenu() {
   list.appendChild(option5);
   list.appendChild(option6);
 
-  hamburger.classList.add("menu");
+  menuIcon.classList.add("menu");
 
   option1.textContent = menuItems[0];
   option2.textContent = menuItems[1];
@@ -63,11 +145,40 @@ function createMenu() {
   option5.textContent = menuItems[4];
   option6.textContent = menuItems[5];
 
-  hamburger.addEventListener("click", (e) => {
-    console.log("sdad");
-    hamburger.classList.toggle("menu--open");
-  });
-  return hamburger;
+  return menuIcon;
 }
 
-headerMenu.appendChild(createMenu());
+
+const menuButton = document.querySelector(".menu-button");
+
+menuButton.addEventListener("click", () => {
+  console.log("sdad");
+  menu.classList.toggle("menu--open");
+});
+
+const menu = createMenu(menuItems);
+
+headerMenu.appendChild(menu);
+
+
+
+// function optionCreator(text) {
+//   const option = document.createElement('p');
+
+//   option.textContent = 'text';
+
+//   option.addEventListener('click', (event) => {
+//     console.log('The option was clicked');
+//   })
+//   return option;
+// }
+
+// for(let i = 0; i < menuItems; i++) {
+//   let option = optionCreator(menuItems[i]);
+//   console.log(option);
+//   topMenu.appendChild(optionCreator());
+// }
+
+// let topMenu = document.querySelector('.header');
+
+// topMenu.appendChild(optionCreator());
